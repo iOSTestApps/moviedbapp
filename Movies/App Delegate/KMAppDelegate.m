@@ -9,6 +9,7 @@
 #import "KMAppDelegate.h"
 #import "StoryBoardUtilities.h"
 #import "KMDiscoverListViewController.h"
+#import <BuddyBuildSDK/BuddyBuildSDK.h>
 
 @implementation KMAppDelegate
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [BuddyBuildSDK setup];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     UINavigationController* navigationController = (UINavigationController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMDiscoverStoryboard" class:[KMDiscoverListViewController class]];
